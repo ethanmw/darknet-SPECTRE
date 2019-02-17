@@ -62,8 +62,8 @@ while True:
                         'myid': 'mcavanag'
                     }
                 )
-
-
+        except:
+            pass
         if (delete_local_flag):
             os.remove(filename)
         if (delete_aws_flag):
