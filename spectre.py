@@ -3,6 +3,7 @@ import boto3
 import subprocess
 import os
 import io
+import time
 
 os.chdir("/home/ec2-user/darknet")
 
@@ -21,6 +22,7 @@ s3 = boto3.resource('s3')
 bucket = s3.Bucket(BUCKET_TITLE)
 while True:
     for key in bucket.meta.client.list_objects(Bucket=bucket.name, Delimiter='/')["CommonPrefixes"]:
+        time.sleep(15)
         image = key["Prefix"]
         timestamp = 0
         imagebytestring = b''
