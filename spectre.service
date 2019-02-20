@@ -1,0 +1,13 @@
+[Unit]
+Description=SPECTRE
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/home/ec2-user/darknet/spectre.py
+User=ec2-user
+WorkingDirectory=/home/ec2-user/darknet
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
